@@ -1,0 +1,12 @@
+{ extends "/base.html"}
+
+{% for notion in notions %}
+	<h1>{{ notion.title }}</h1>
+    <h3>{{ notion.description }}</h3>
+    <h3>{{ notion.created }} - {{ notion.when_to_note|date }}</h3>
+    <div>
+        {% for tag in notion.tag %}
+    	    <li>{{ tag }}</li>
+        {% endfor %}
+    </div>
+{% endfor %}
